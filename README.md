@@ -83,8 +83,13 @@ a response, which we then display on screen. That's it.
 
 ## TODOs
 
-* Streaming requests from Dart to native are supported, but the message sequence numbers are not actually delivered to the native code yet
-* Streaming responses from native back to Dart are in progress, but not yet completed
+* Streaming requests from Dart to native are supported, but the message sequence numbers are not actually delivered to the native code yet.
+* Streaming responses from native back to Dart are in progress, but not yet completed.
+
+## More reading
+
+* Google protocol buffers and RPC services documentation: https://developers.google.com/protocol-buffers/
+* Protocol buffers are usually used over HTTP2, as explained here: https://medium.com/@bettdougie/building-an-end-to-end-system-using-grpc-flutter-part-1-d23b2356ed28
 
 ## Notes
 
