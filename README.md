@@ -54,12 +54,12 @@ That's enough talk about the build environment. Let's look at the implementation
 
 FFI is largely driven from the Dart side. In Rust, we export two functions for
 Dart to discover: `initialize_ffi()`, which performs any start-up initialization required
-in the native code (in this example, it sets up logcat logging for Android, but does
+in the native code (in this example, it just sets up logcat logging for Android,
 nothing else), and `receive_from_ffi()`, which accepts a protocol buffer from Dart
 and dispatches a result. The code is in `/native/lib.rs`.
 
 There are three components to the Dart side. In `lib/bridge.dart`, we define the
-FFI interface that calls the two functions exported from Rust. This bridge contains
+FFI interface that calls the two functions exported from Rust. This FFI bridge contains
 all the functionality necessary to send requests to, and receive responses from,
 the native code, although it's a bit cumbersome to use directly. To make things easier,
 we provide `lib/grpc.dart`, an implementation of `GrpcTransportStream` that uses
@@ -77,7 +77,7 @@ protocol buffers quickstart guide is also used here. The file defines two messag
 `HelloRequest` and `HelloResponse`, and binds those messages together into a
 GRPC service (`Greeter`) that provides two functions, `SayHello()` and `SayHelloAgain()`.
 
-In the Dart code in /lib/main.dart, we create an instance of the `GreeterClient`,
+In the Dart code in `/lib/main.dart`, we create an instance of the `GreeterClient`,
 we bind our FFI channel to it, and we call the `SayHello()` function. Rust returns
 a response, which we then display on screen. That's it. 
 
@@ -85,6 +85,7 @@ a response, which we then display on screen. That's it.
 
 * Streaming requests from Dart to native are supported, but the message sequence numbers are not actually delivered to the native code yet.
 * Streaming responses from native back to Dart are in progress, but not yet completed.
+* In a perfect world, response dispatch would be handled using async/await in Rust - everything is sync at the moment.
 
 ## More reading
 
