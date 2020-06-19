@@ -12,10 +12,14 @@ from Dart effortless.
 
 ## Prerequisites
 
-* Existing, up-to-date installation of Dart and Flutter
-* Existing, up-to-date installation of Android SDK
-* Existing, up-to-date installation of rust, rustup and cargo
-* The ability to run makefiles
+* An existing, up-to-date installation of Dart and Flutter.
+* An existing, up-to-date installation of the Android SDK, and the correctly configured environment variables to go with it, in particular `$ANDROID_NDK_HOME`.
+* An existing, up-to-date installation of rust, rustup and cargo.
+* The standard GNU tools that come with any *nix distribution, including GNU `make` or an equivalent.
+
+Everything below was tested on Arch Linux. It should work without changes on any
+up-to-date Linux distribution, and probably on macOS as well (given a few caveats
+mentioned below).
 
 ## Build
 
