@@ -40,6 +40,9 @@ init:
 clean:
 	rm -rf build
 	rm -rf release
+	rm -f android/app/src/main/jniLibs/arm64-v8a/*
+	rm -f android/app/src/main/jniLibs/armeabi-v7a/*
+	rm -f android/app/src/main/jniLibs/x86/*
 	flutter clean
 	flutter pub get
 	flutter pub upgrade
