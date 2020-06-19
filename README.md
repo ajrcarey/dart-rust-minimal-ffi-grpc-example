@@ -86,6 +86,7 @@ a response, which we then display on screen. That's it.
 * Streaming requests from Dart to native are supported, but the message sequence numbers are not actually delivered to the native code yet.
 * Streaming responses from native back to Dart are in progress, but not yet completed.
 * In a perfect world, response dispatch would be handled using async/await in Rust - everything is sync at the moment.
+* The `make protos` section of the makefile does a lot of text processing using awk. There's almost certainly a better way. 
 
 ## More reading
 
