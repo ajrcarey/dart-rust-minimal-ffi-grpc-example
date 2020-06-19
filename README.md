@@ -67,8 +67,8 @@ our FFI bridge. This is the only substantive piece of code required to support G
 stub definitions for everything else are provided as part of `package:grpc`. Finally,
 we provide a helper library, `lib/services.dart`, that decodes the service definitions
 from the .proto files, since the code generation step doesn't do this for us in Dart.
-(It does in Rust.) Without this, our GRPC implementation would have no way of knowing
-which message types and functions were associated with which GRPC services. 
+(It does in Rust.) Without this, it would be difficult for our GRPC implementation
+to figure out the messages types associated with the code-generated GRPC services. 
 
 ## The example application
 
