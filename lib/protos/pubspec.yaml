@@ -1,0 +1,8 @@
+name: shared_ffi_protos
+description: Auto-generated protobuf messages shared across FFI
+version: 1.0.0
+environment:
+  sdk: '>=2.8.0 <3.0.0'
+dependencies:
+  protobuf: ^1.0.1
+  grpc: ^2.2.0

@@ -1,0 +1,6 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.duet.rescore">
+<!--    As per note at https://flutter.dev/docs/deployment/android -->
+<!--    https://issuetracker.google.com/issues/147096055 -->
+<!--    <application android:extractNativeLibs="false"></application>-->
+</manifest>

@@ -1,0 +1,5 @@
+analyzer:
+    enable-experiment:
+      - extension-methods
+#      - non-nullable # Supported in dart 2.8 but not in flutter 1.17, which is still on dart 2.7
+# Enable in flutter once flutter ships dart 2.8

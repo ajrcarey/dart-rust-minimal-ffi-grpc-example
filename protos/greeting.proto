@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.google.greeting;
+
+// https://grpc.io/docs/languages/dart/quickstart/
+
+// The greeting service definition.
+service Greeter {
+    // Sends a greeting
+    rpc SayHello (HelloRequest) returns (HelloResponse);
+    // Sends another greeting
+    rpc SayHelloAgain (HelloRequest) returns (HelloResponse);
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+    string name = 1;
+}
+
+// The response message containing the greetings
+message HelloResponse {
+    string message = 1;
+}
