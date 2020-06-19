@@ -46,9 +46,9 @@ flutter run
 There's a lot going on in `make all`. To break it down:
 
 1. `make clean`: The build environment is cleaned of prior artifacts.
-2. `make protos`: Source code for both Dart and Rust is built from the protocol buffer definitions in /protos.
+2. `make protos`: Source code for both Dart and Rust is generated from the protocol buffer definitions in /protos.
 3. `make android-debug`: The Rust code is compiled into three separate binaries, one for each of the three Android architectures. We build debug binaries to keep build times down.
-4. `make ios-debug`: The Rust code is compiled into two separate binaries, one for each of the two support iOS architectures. Note that this only takes place if you're running MacOS.
+4. `make ios-debug`: The Rust code is compiled into two separate binaries, one for each of the two support iOS architectures. Note that this only takes place if you're running macOS.
 5. `make bindings`: A C-style header file is derived from the Rust binaries - this is necessary for library linking when packaging an iOS build with XCode.
 6. `make install`: Build artificats are copied into their appropriate positions in the Flutter /android and /ios folders, ready to be packaged with either `flutter run` or `flutter build`. 
 
