@@ -71,19 +71,20 @@ our FFI bridge. This is the only substantive piece of code required to support G
 stub definitions for everything else are provided as part of `package:grpc`. Finally,
 we provide a helper library, `lib/services.dart`, that decodes the service definitions
 from the .proto files, since the code generation step doesn't do this for us in Dart.
-(It does in Rust.) Without this, it would be difficult for our GRPC implementation
-to figure out the messages types associated with the code-generated GRPC services. 
+(It does in Rust.) Without this, our GRPC implementation wouldn't know how message types
+are associated with services. 
 
 ## The example application
 
-This is as simple an example as possible. The standard `greeting.proto` used in Google's
-protocol buffers quickstart guide is also used here. The file defines two messages,
-`HelloRequest` and `HelloResponse`, and binds those messages together into a
+`lib/main.dart` demonstrates a very, very simple example. The standard `greeting.proto`
+used in Google's protocol buffers quickstart guide is also used here - it's located in `protos/`.
+It defines two messages, `HelloRequest` and `HelloResponse`, and binds those messages together into a
 GRPC service (`Greeter`) that provides two functions, `SayHello()` and `SayHelloAgain()`.
 
 In the Dart code in `/lib/main.dart`, we create an instance of the `GreeterClient`,
-we bind our FFI channel to it, and we call the `SayHello()` function. Rust returns
-a response, which we then display on screen. That's it. 
+we bind our FFI channel to it, and we call the `SayHello()` function to send a
+`HelloRequest` message to Rust. Rust returns a `HelloResponse` in return, which we then
+display on screen in a Flutter widget. That's it. 
 
 ## TODOs
 
